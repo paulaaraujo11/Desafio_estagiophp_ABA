@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = 'SELECT * from departamento ORDER BY id';
         $departamentos = $conn->query($sql);
         Banco::desconectar();
-        $funcaoErro = 'Por favor digite o função do funcionário!';
+        $funcaoErro = 'Por favor digite a função do funcionário!';
         $validacao = false;
     }
 
@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = 'SELECT * from departamento ORDER BY id';
         $departamentos = $conn->query($sql);
         Banco::desconectar();
-        $idadeErro = 'Por favor idade,em anos,válida!';
+        $idadeErro = 'Por favor  digite uma idade,em anos,válida!';
         $validacao = false;
     }elseif (!is_numeric($idade) or ($idade < 0)) {
         //traz os departamentos e envia ao formulário junto com o erro
@@ -161,7 +161,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                     </div>
 
-                    <br/>
                     <div class="col-md-3 control-group <?php echo !empty($deptErro) ? 'error ' : ''; ?>">
                         <label class="control-label">Departamento</label>
                         <div class="controls">
@@ -190,7 +189,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                     </div>
 
-                    <br/>
                     <div class="col-md-2 control-group <?php echo !empty($idadeErro) ? 'error' : ''; ?>">
                         <label class="control-label">Idade</label>
                         <div class="controls">

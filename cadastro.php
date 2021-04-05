@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = 'SELECT * from departamento ORDER BY id';
         $departamentos = $conn->query($sql);
         Banco::desconectar();
-        $funcaoErro = 'Por favor digite o função do funcionário!';
+        $funcaoErro = 'Por favor digite a função do funcionário!';
         $validacao = false;
     }
 
